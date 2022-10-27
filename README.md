@@ -1,4 +1,4 @@
-# cookiecutter-caped-plugin
+# cookiecutter-caped-package
 
 [Cookiecutter] template for authoring ([caped]-based) [pypi] packages.
 
@@ -6,7 +6,7 @@
 
 ## Getting Started
 
-### Create your plugin package
+### Create your package package
 
 Install [Cookiecutter] and generate a new caped package project:
 
@@ -15,7 +15,7 @@ pip install cookiecutter
 cookiecutter https://github.com/Kapoorlabs-CAPED/cookiecutter-template
 ```
 
-Cookiecutter prompts you for information regarding your plugin
+Cookiecutter prompts you for information regarding your package
 (A new folder will be created in your current working directory):
 
 ```bash
@@ -26,7 +26,7 @@ github_username_or_organization [githubuser]: Kapoorlabs-CAPED
 # recommend using the 'caped-' prefix in the package name.
 # If your package provides functionality outside of caped, you may
 # choose to leave caped out of the name.
-plugin_name [caped-foobar]: caped-ai
+package_name [caped-foobar]: caped-ai
 Select github_repository_url:
 1 - https://github.com/neuronz52/caped-ai
 2 - provide later
@@ -34,8 +34,8 @@ Choose from 1, 2 [1]:
 module_name [ai]: caped_growth_ai
 display_name [caped FooBar]: AI
 short_description [A simple package to use with caped library]:
-# you can select from various plugin template examples
-include_sample_data_plugin [y]:
+# you can select from various package template examples
+include_sample_data_package [y]:
 use_git_tags_for_versioning [n]:
 Select license:
 1 - BSD-3
@@ -207,7 +207,7 @@ by installing [pre-commit ci](https://pre-commit.ci/) on your repository.
 
 - Installable [PyPI] package
 - [tox] test suite, testing various python versions and platforms.
-- `README.md` file that contains useful information about your plugin
+- `README.md` file that contains useful information about your package
 - Continuous integration configuration for [github actions] that handles testing
   and deployment of tagged releases
 - git-tag-based version management with [setuptools_scm]
@@ -218,10 +218,10 @@ by installing [pre-commit ci](https://pre-commit.ci/) on your repository.
 ## Resources
 
 Please consult the [caped package
-docs](https://caped.org/stable/plugins/index.html) for more information on
-how to create a plugin.
+docs](https://caped.org/stable/packages/index.html) for more information on
+how to create a package.
 
-Details on why this plugin template is using the `src` layout can be found [here](https://blog.ionelmc.ro/2014/05/25/python-packaging/#the-structure) and [here](https://hynek.me/articles/testing-packaging/)
+Details on why this package template is using the `src` layout can be found [here](https://blog.ionelmc.ro/2014/05/25/python-packaging/#the-structure) and [here](https://hynek.me/articles/testing-packaging/)
 
 ## Issues
 
@@ -230,21 +230,21 @@ issue] along with a detailed description.
 
 ## License
 
-Distributed under the terms of the [BSD-3] license, `cookiecutter-caped-plugin`
+Distributed under the terms of the [BSD-3] license, `cookiecutter-caped-package`
 is free and open source software.
 
 [caped organization]: https://github.com/Kapoorlabs-CAPED
 [gitter_badge]: https://badges.gitter.im/Join%20Chat.svg
-[gitter]: https://gitter.im/caped/cookiecutter-caped-plugin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge "Join Chat on Gitter.im"
-[travis_badge]: https://travis-ci.org/caped/cookiecutter-caped-plugin.svg?branch=main
-[travis]: https://travis-ci.org/caped/cookiecutter-caped-plugin "See Build Status on Travis CI"
-[docs_badge]: https://readthedocs.org/projects/cookiecutter-caped-plugin/badge/?version=latest
-[documentation]: https://cookiecutter-caped-plugin.readthedocs.io/en/latest/ "Documentation"
+[gitter]: https://gitter.im/caped/cookiecutter-caped-package?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge "Join Chat on Gitter.im"
+[travis_badge]: https://travis-ci.org/caped/cookiecutter-caped-package.svg?branch=main
+[travis]: https://travis-ci.org/caped/cookiecutter-caped-package "See Build Status on Travis CI"
+[docs_badge]: https://readthedocs.org/projects/cookiecutter-caped-package/badge/?version=latest
+[documentation]: https://cookiecutter-caped-package.readthedocs.io/en/latest/ "Documentation"
 [cookiecutter]: https://github.com/audreyr/cookiecutter
 [caped]: https://github.com/Kapoorlabs-CAPED
 [pypi]: https://pypi.org/
 [tox]: https://tox.readthedocs.io/en/latest/
-[file an issue]: https://github.com/caped/cookiecutter-caped-plugin/issues
+[file an issue]: https://github.com/caped/cookiecutter-caped-package/issues
 [sphinx]: https://www.sphinx-doc.org/en/master/usage/quickstart.html
 [mkdocs]: https://www.mkdocs.org/getting-started/
 [jupyterbook]: https://jupyterbook.org/en/stable/start/your-first-book.html
