@@ -11,7 +11,7 @@
 
 ----------------------------------
 
-This [caped-ai] package was generated with [Cookiecutter] using [@caped-ai]'s [cookiecutter-template] template.
+This [caped] package was generated with [Cookiecutter] using [@caped]'s [cookiecutter-template] template.
 
 
 
@@ -42,9 +42,11 @@ Distributed under the terms of the [{{cookiecutter.license}}] license,
 
 If you encounter any problems, please [file an issue] along with a detailed description.
 
-[caped-ai]: https://github.com/Kapoorlabs-CAPED
+
+[pip]: https://pypi.org/project/pip/
+[caped]: https://github.com/Kapoorlabs-CAPED
 [Cookiecutter]: https://github.com/audreyr/cookiecutter
-[@caped-ai]: https://github.com/Kapoorlabs-CAPED
+[@caped]: https://github.com/Kapoorlabs-CAPED
 [MIT]: http://opensource.org/licenses/MIT
 [BSD-3]: http://opensource.org/licenses/BSD-3-Clause
 [GNU GPL v3.0]: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -55,7 +57,7 @@ If you encounter any problems, please [file an issue] along with a detailed desc
 {% if cookiecutter.github_repository_url != 'provide later' %}
 [file an issue]: https://github.com/{{cookiecutter.github_username_or_organization}}/{{cookiecutter.package_name}}/issues
 {% endif %}
-[caped-ai]: https://github.com/Kapoorlabs-CAPED
+[caped]: https://github.com/Kapoorlabs-CAPED/
 [tox]: https://tox.readthedocs.io/en/latest/
 [pip]: https://pypi.org/project/pip/
 [PyPI]: https://pypi.org/

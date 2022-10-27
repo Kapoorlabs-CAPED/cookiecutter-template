@@ -4,7 +4,6 @@ import logging
 import os
 import shutil
 import subprocess
-from pathlib import Path
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("post_gen_project")
@@ -35,6 +34,7 @@ if __name__ == "__main__":
         subprocess.run(["git", "checkout", "-b", "main"])
     except Exception:
         pass
+
 {% if cookiecutter.install_precommit == 'y' %}
     # try to install and update pre-commit
     try:

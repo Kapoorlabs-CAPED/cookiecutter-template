@@ -54,7 +54,7 @@ and ready for automatic deployment!
 For more detailed information on each prompt see the [prompts reference](./PROMPTS.md).
 
 ```no-highlight
-caped-growth-cone-finder/
+caped-ai/
 │
 ├── .github
 │   └── workflows
@@ -97,7 +97,7 @@ git commit -m 'initial commit'
    # here, continuing with the example above...
    # but replace with your own username and repo name
 
-   git remote add origin https://github.com/neuronz52/caped-growth-cone-finder.git
+   git remote add origin https://github.com/neuronz52/caped-ai.git
    git push -u origin main
    ```
 
@@ -161,7 +161,7 @@ and available for pip install with:
 
 ```bash
 # for example
-pip install caped-growth-cone-finder
+pip install caped-ai
 ```
 
 ### Running tests locally
