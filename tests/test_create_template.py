@@ -10,19 +10,19 @@ import subprocess
 import pytest
 
 
-def run_tox(plugin):
-    """Run the tox suite of the newly created plugin."""
+def run_tox(package):
+    """Run the tox suite of the newly created package."""
     try:
         subprocess.check_call(
-            ["tox", plugin, "-c", os.path.join(plugin, "tox.ini"), "-e", "py"]
+            ["tox", package, "-c", os.path.join(package, "tox.ini"), "-e", "py"]
         )
     except subprocess.CalledProcessError as e:
         pytest.fail("Subprocess fail", pytrace=True)
 
 
-def test_run_cookiecutter_and_plugin_tests(cookies, capsys):
-    """Create a new plugin via cookiecutter and run its tests."""
-    result = cookies.bake(extra_context={"plugin_name": "foo-bar"})
+def test_run_cookiecutter_and_package_tests(cookies, capsys):
+    """Create a new package via cookiecutter and run its tests."""
+    result = cookies.bake(extra_context={"package_name": "foo-bar"})
 
     assert result.exit_code == 0
     assert result.exception is None
@@ -30,31 +30,27 @@ def test_run_cookiecutter_and_plugin_tests(cookies, capsys):
     assert result.project.isdir()
     assert result.project.join("src").isdir()
     assert result.project.join("src", "foo_bar", "__init__.py").isfile()
-    assert result.project.join("src", "foo_bar", "_tests", "test_reader.py").isfile()
 
     run_tox(str(result.project))
 
 
-def test_run_cookiecutter_and_plugin_tests_with_napari_prefix(cookies, capsys):
-    """make sure it's also ok to use napari prefix."""
-    result = cookies.bake(extra_context={"plugin_name": "napari-foo"})
+def test_run_cookiecutter_and_package_tests_with_caped_prefix(cookies, capsys):
+    """make sure it's also ok to use caped prefix."""
+    result = cookies.bake(extra_context={"package_name": "caped-foo"})
 
     assert result.exit_code == 0
     assert result.exception is None
-    assert result.project.basename == "napari-foo"
+    assert result.project.basename == "caped-foo"
     assert result.project.isdir()
     assert result.project.join("src").isdir()
-    assert result.project.join("src", "napari_foo", "__init__.py").isfile()
-    assert result.project.join("src", "napari_foo", "_tests", "test_reader.py").isfile()
+    assert result.project.join("src", "caped_foo", "__init__.py").isfile()
 
 
-def test_run_cookiecutter_select_plugins(cookies, capsys):
-    """make sure it's also ok to use napari prefix."""
+def test_run_cookiecutter_select_packages(cookies, capsys):
+    """make sure it's also ok to use caped prefix."""
     result = cookies.bake(
         extra_context={
-            "plugin_name": "anything",
-            "include_widget_plugin": "n",
-            "include_writer_plugin": "n",
+            "package_name": "anything",
         }
     )
 
@@ -64,30 +60,21 @@ def test_run_cookiecutter_select_plugins(cookies, capsys):
     assert result.project.isdir()
     assert result.project.join("src").isdir()
     assert result.project.join("src", "anything", "__init__.py").isfile()
-    assert result.project.join("src", "anything", "_tests", "test_reader.py").isfile()
+    assert result.project.join("src", "anything", "_tests").isfile()
 
-    assert not result.project.join("src", "anything", "_widget.py").isfile()
     assert not result.project.join(
-        "src", "anything", "_tests", "test_widget.py"
+        "src", "anything", "_tests"
     ).isfile()
-    assert not result.project.join("src", "anything", "_writer.py").isfile()
-    assert not result.project.join(
-        "src", "anything", "_tests", "test_writer.py"
-    ).isfile()
+    assert not result.project.join("src", "anything").isfile()
+   
 
 
-@pytest.mark.parametrize("include_reader_plugin", ["y", "n"])
-@pytest.mark.parametrize("include_writer_plugin", ["y", "n"])
-@pytest.mark.parametrize("include_sample_data_plugin", ["y", "n"])
-@pytest.mark.parametrize("include_widget_plugin", ["y", "n"])
-def test_pre_commit_validity(cookies, include_reader_plugin, include_writer_plugin, include_sample_data_plugin, include_widget_plugin):
+@pytest.mark.parametrize("include_sample_data_package", ["y", "n"])
+def test_pre_commit_validity(cookies, include_sample_data_package):
     result = cookies.bake(
         extra_context={
-            "plugin_name": "anything",
-            "include_reader_plugin": include_reader_plugin,
-            "include_writer_plugin": include_writer_plugin,
-            "include_sample_data_plugin": include_sample_data_plugin,
-            "include_widget_plugin": include_widget_plugin,
+            "package_name": "anything",
+            "include_sample_data_package": include_sample_data_package,
             "install_precommit": "y",
         }
     )
