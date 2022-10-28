@@ -77,7 +77,7 @@ Your package template is ready!  Next steps:
     Documentation = https://github.com/{{cookiecutter.github_username_or_organization}}/{{cookiecutter.package_name}}#README.md
     Source Code = https://github.com/{{cookiecutter.github_username_or_organization}}/{{cookiecutter.package_name}}
     User Support = https://github.com/{{cookiecutter.github_username_or_organization}}/{{cookiecutter.package_name}}/issues
-    These URLs will be displayed on your package's napari hub page.
+    These URLs will be displayed on your package's github.
     You may wish to change these before publishing your package!"""
 
 {% else %}
