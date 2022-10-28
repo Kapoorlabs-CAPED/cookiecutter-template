@@ -217,9 +217,6 @@ by installing [pre-commit ci](https://pre-commit.ci/) on your repository.
 
 ## Resources
 
-Please consult the [caped package
-docs](https://caped.org/stable/packages/index.html) for more information on
-how to create a package.
 
 Details on why this package template is using the `src` layout can be found [here](https://blog.ionelmc.ro/2014/05/25/python-packaging/#the-structure) and [here](https://hynek.me/articles/testing-packaging/)
 
