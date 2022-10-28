@@ -26,13 +26,13 @@ github_username_or_organization [githubuser]: Kapoorlabs-CAPED
 # recommend using the 'caped-' prefix in the package name.
 # If your package provides functionality outside of caped, you may
 # choose to leave caped out of the name.
-package_name [caped-foobar]: caped-ai
+package_name [caped-based-repobar]: caped-ai
 Select github_repository_url:
 1 - https://github.com/neuronz52/caped-ai
 2 - provide later
 Choose from 1, 2 [1]:
 module_name [ai]: caped_growth_ai
-display_name [caped FooBar]: AI
+display_name [caped based-repoBar]: AI
 short_description [A simple package to use with caped library]:
 # you can select from various package template examples
 include_sample_data_package [y]:
