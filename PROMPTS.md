@@ -82,12 +82,6 @@ in `setup.cfg` under the `description` field. If you publish your package to PyP
 this description will also be listed alongside your package name in search results.
 
 
-## include_sample_data_package
-
-Choosing `"y"` for this prompt will create an example sample-data provider
-implementation inside your package's module in the file `_sample_data.py`.
-For more information see the [specification reference][sample-data-spec].
-
 
 ## use_git_tags_for_versioning
 
@@ -126,7 +120,6 @@ for that license being listed in your `setup.cfg` under the `license` field.
 
 License options include: [BSD-3], [MIT], [MPL v2.0], [Apache v2.0], [GNU GPL v3.0], or [GNU LGPL v3.0]
 
-[sample-data-spec]: https://napari.org/stable/packages/contributions.html#contributions-sample-data
 [glob pattern]: https://en.wikipedia.org/wiki/Glob_(programming)
 [mit]: http://opensource.org/licenses/MIT
 [mpl v2.0]: https://www.mozilla.org/media/MPL/2.0/index.txt

@@ -1,13 +1,7 @@
 name: {{cookiecutter.package_name}}
 display_name: {{cookiecutter.display_name}}
-contributions:
-  commands: {% if cookiecutter.include_sample_data_plugin == 'y' %}  
-    - id: {{cookiecutter.package_name}}.make_sample_data
-      python_name: {{cookiecutter.module_name}}._sample_data:make_sample_data
-      title: Load sample data from {{cookiecutter.display_name}}{% endif %}
+
   
-  sample_data:
-    - command: {{cookiecutter.package_name}}.make_sample_data
-      display_name: {{cookiecutter.display_name}}
+
       
 
