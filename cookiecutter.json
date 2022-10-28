@@ -8,8 +8,8 @@
     "display_name": "caped FooBar",
     "short_description": "A simple package to use with caped",
     "include_sample_data_package": "y",
-    "use_git_tags_for_versioning": "n",
-    "install_precommit": "n",
+    "use_git_tags_for_versioning": "y",
+    "install_precommit": "y",
     "license": [
         "BSD-3",
         "MIT",

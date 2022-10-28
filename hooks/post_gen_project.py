@@ -25,8 +25,6 @@ def remove_temp_folders(temp_folders):
 
 if __name__ == "__main__":
     remove_temp_folders(ALL_TEMP_FOLDERS)
-    
-
     msg = ''
     # try to run git init
     try:
@@ -36,7 +34,7 @@ if __name__ == "__main__":
         pass
 
 {% if cookiecutter.install_precommit == 'y' %}
-    # try to install and update pre-commit
+    # closedPylancetry to install and update pre-commit
     try:
         print("install pre-commit ...")
         subprocess.run(["pip", "install", "pre-commit"], stdout=subprocess.DEVNULL)
@@ -56,21 +54,17 @@ Your package template is ready!  Next steps:
 
 1. `cd` into your new directory and initialize a git repo
    (this is also important for version control!)
-
-     cd {{ cookiecutter.package_name }}
+     cd {{ cookiecutter.plugin_name }}
      git init -b main
      git add .
      git commit -m 'initial commit'
-
      # you probably want to install your new package into your environment
      pip install -e ."""
     else:
         msg +="""
-Your package template is ready!  Next steps:
-
+Your plugin template is ready!  Next steps:
 1. `cd` into your new directory
-
-     cd {{ cookiecutter.package_name }}
+     cd {{ cookiecutter.plugin_name }}
      # you probably want to install your new package into your env
      pip install -e ."""
 
@@ -86,42 +80,31 @@ Your package template is ready!  Next steps:
 
 {% if cookiecutter.github_repository_url != 'provide later' %}
     msg += """
-2. Create a github repository with the name '{{ cookiecutter.package_name }}':
-   https://github.com/{{ cookiecutter.github_username_or_organization }}/{{ cookiecutter.package_name }}.git
-
+2. Create a github repository with the name '{{ cookiecutter.plugin_name }}':
+   https://github.com/{{ cookiecutter.github_username_or_organization }}/{{ cookiecutter.plugin_name }}.git
 3. Add your newly created github repo as a remote and push:
-
-     git remote add origin https://github.com/{{ cookiecutter.github_username_or_organization }}/{{ cookiecutter.package_name }}.git
+     git remote add origin https://github.com/{{ cookiecutter.github_username_or_organization }}/{{ cookiecutter.plugin_name }}.git
      git push -u origin main
-
 4. The following default URLs have been added to `setup.cfg`:
-
-    Bug Tracker = https://github.com/{{cookiecutter.github_username_or_organization}}/{{cookiecutter.package_name}}/issues
-    Documentation = https://github.com/{{cookiecutter.github_username_or_organization}}/{{cookiecutter.package_name}}#README.md
-    Source Code = https://github.com/{{cookiecutter.github_username_or_organization}}/{{cookiecutter.package_name}}
-    User Support = https://github.com/{{cookiecutter.github_username_or_organization}}/{{cookiecutter.package_name}}/issues
-
-    These URLs will be displayed on your package's caped page.
-    You may wish to change these before publishing your package!"""
+    Bug Tracker = https://github.com/{{cookiecutter.github_username_or_organization}}/{{cookiecutter.plugin_name}}/issues
+    Documentation = https://github.com/{{cookiecutter.github_username_or_organization}}/{{cookiecutter.plugin_name}}#README.md
+    Source Code = https://github.com/{{cookiecutter.github_username_or_organization}}/{{cookiecutter.plugin_name}}
+    User Support = https://github.com/{{cookiecutter.github_username_or_organization}}/{{cookiecutter.plugin_name}}/issues
+    These URLs will be displayed on your plugin's napari hub page.
+    You may wish to change these before publishing your plugin!"""
 
 {% else %}
     msg += """
-2. Create a github repository for your package:
+2. Create a github repository for your plugin:
    https://github.com/new
-
 3. Add your newly created github repo as a remote and push:
-
      git remote add origin https://github.com/your-repo-username/your-repo-name.git
      git push -u origin main
-
    Don't forget to add this url to setup.cfg!
-
      [metadata]
      url = https://github.com/your-repo-username/your-repo-name.git
-
 4. Consider adding additional links for documentation and user support to setup.cfg
    using the project_urls key e.g.
-
     [metadata]
     project_urls =
         Bug Tracker = https://github.com/your-repo-username/your-repo-name/issues
@@ -131,9 +114,6 @@ Your package template is ready!  Next steps:
 {% endif %}
     msg += """
 5. Read the README for more info: https://github.com/Kapoorlabs-CAPED/cookiecutter-template
-
-
-
 
 """
 
