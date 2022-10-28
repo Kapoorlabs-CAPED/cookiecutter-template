@@ -7,7 +7,6 @@
     "module_name": "{{ cookiecutter.package_name|lower|replace('-', '_') }}",
     "display_name": "caped based repo",
     "short_description": "A simple package to use with caped",
-    "include_sample_data_package": "y",
     "use_git_tags_for_versioning": "y",
     "install_precommit": "y",
     "license": [
